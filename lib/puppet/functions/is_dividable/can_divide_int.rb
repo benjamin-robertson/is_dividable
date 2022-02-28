@@ -12,14 +12,13 @@ Puppet::Functions.create_function(:"is_dividable::can_divide_int") do
   # required parameters below and puppet will enforce these
   # so change x to suit your needs although only one parameter is required
   # as defined in the dispatch method.
-  def can_divide_int(x,y)
+  def can_divide_int(x, y)
     result = x.to_f / y
     if result.to_i == result
       true
     else
       false
     end
-    
   end
 
   # you can define other helper methods in this code block as well

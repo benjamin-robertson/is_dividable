@@ -14,11 +14,11 @@ Puppet::Functions.create_function(:"is_dividable::uptime_range") do
   # required parameters below and puppet will enforce these
   # so change x to suit your needs although only one parameter is required
   # as defined in the dispatch method.
-  def uptime_range(offset,repeat,uptime_seconds,uptime_hours)
+  def uptime_range(offset, repeat, uptime_seconds, uptime_hours)
     # check if we match hour offset
     result = uptime_hours.to_f / repeat
     if result.to_i == result
-      uptime_hours_sec = (uptime_hours) * 3600 
+      uptime_hours_sec = uptime_hours * 3600
       result_to_check = uptime_seconds - uptime_hours_sec
       if result_to_check <= offset
         true
