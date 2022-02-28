@@ -3,8 +3,8 @@
 # https://github.com/puppetlabs/puppet-specifications/blob/master/language/func-api.md#the-4x-api
 Puppet::Functions.create_function(:"is_dividable::can_divide_int") do
   dispatch :can_divide_int do
-    param 'Numeric', :a
-    param 'Numeric', :b
+    param 'Numeric', :a # fact['uptime_hours']
+    param 'Numeric', :b # how often to repeat, hours
     return_type 'Boolean'
   end
   # the function below is called by puppet and and must match

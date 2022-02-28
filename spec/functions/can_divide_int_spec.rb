@@ -8,5 +8,7 @@ describe 'is_dividable::can_divide_int' do
   # with your expectations
   it { is_expected.to run.with_params(2, 24).and_return(false) }
   it { is_expected.to run.with_params(0, 24).and_return(true) }
+  it { is_expected.to run.with_params(48, 24).and_return(true) }
+  it { is_expected.to run.with_params(49, 24).and_return(false) }
   it { is_expected.to run.with_params(nil).and_raise_error(StandardError) }
 end
